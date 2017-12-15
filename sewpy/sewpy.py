@@ -315,7 +315,7 @@ class SEW():
 		if force or not os.path.exists(self._get_config_filepath()):	
 			p = subprocess.Popen([self.sexpath, "-dd"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 			out, err = p.communicate()
-			if err != "":
+			if err != b"":
 				logger.warning("Ouch, SExtractor complains :")
 				logger.warning(err)
 			f = open(self._get_config_filepath(), 'w')
